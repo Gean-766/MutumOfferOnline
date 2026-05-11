@@ -227,6 +227,61 @@ src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1" al
     font-weight: 700;
   }
 
+  /* ============ BRAND STRIP (nome do grupo acima do botão) ============ */
+  .brand-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, rgba(126, 211, 33, 0.12) 0%, rgba(37, 211, 102, 0.06) 100%);
+    border: 1px solid var(--border-glow);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .brand-strip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(158, 237, 63, 0.15), transparent);
+    animation: brand-shine 3.5s ease-in-out infinite;
+  }
+
+  @keyframes brand-shine {
+    0%, 100% { left: -50%; }
+    50% { left: 100%; }
+  }
+
+  .brand-icon {
+    font-size: 16px;
+    filter: drop-shadow(0 0 6px rgba(126, 211, 33, 0.5));
+  }
+
+  .brand-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-soft);
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand-accent {
+    background: linear-gradient(135deg, var(--green-bright) 0%, var(--whats-glow) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+
   /* ============ MARKETPLACES STRIP (acima do botão) ============ */
   .marketplaces-strip {
     display: flex;
@@ -633,15 +688,10 @@ src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1" al
       Eletrodomésticos, ferramentas, móveis, eletrônicos e muito mais — com descontos reais de até <strong>80% OFF</strong> nas maiores lojas do Brasil.
     </p>
 
-    <!-- Tira de Marketplaces (acima do botão) -->
-    <div class="marketplaces-strip">
-      <span class="label">Lojas:</span>
-      <div class="logos">
-        <img class="mp-logo" src="https://logoeps.com/wp-content/uploads/2014/05/15983-mercado-livre-logo-icon-vector-icon-vector-eps.png" alt="Mercado Livre" onerror="this.style.display='none'">
-        <img class="mp-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" onerror="this.style.display='none'">
-        <img class="mp-logo" src="https://logodownload.org/wp-content/uploads/2014/06/magazine-luiza-logo-1-1.png" alt="Magazine Luiza" onerror="this.style.display='none'">
-        <img class="mp-logo" src="https://logodownload.org/wp-content/uploads/2018/09/shopee-logo-1.png" alt="Shopee" onerror="this.style.display='none'">
-      </div>
+    <!-- Faixa com nome do grupo (acima do botão) -->
+    <div class="brand-strip">
+      <span class="brand-icon">🛒</span>
+      <span class="brand-name">MutumOfertas<span class="brand-accent">Online</span></span>
     </div>
 
     <!-- CTA Principal -->
